@@ -2,7 +2,7 @@
 
 var util         = require('util')
   , EE           = require('events').EventEmitter
-  , stringifyMsg = require('./stringify-msg')
+  , stringifyMsg = require('./lib/stringify-msg')
   , runnel       = require('runnel')
 
 function inspect(obj, depth) {

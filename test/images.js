@@ -2,14 +2,14 @@
 
 var test         = require('tap').test
   , fs           = require('fs')
-  , createDocker = require('../lib/create-docker')
+  , createDocker = require('./utils/create-docker')
   , logEvents    = require('../lib/log-events')
-  , Images       = require('../lib/images')
-  , Containers   = require('../lib/containers')
+  , Images       = require('../').Images
+  , Containers   = require('../').Containers
   , dockerhost   = 'tcp://127.0.0.1:4243'
-  , group        = 'test'
-// TODO this needs to be a tar that contains a valid project that starts a server or something to keep running for container tests
   , testUnoTar   = __dirname + '/fixtures/test-uno.tar'
+  , testDosTar   = __dirname + '/fixtures/test-dos.tar'
+  , toastUnoTar  = __dirname + '/fixtures/toast-uno.tar'
 
 var docker = createDocker({ dockerhost: dockerhost });
 
@@ -23,24 +23,62 @@ function inspect(obj, depth) {
   console.error(require('util').inspect(obj, false, depth || 5, true));
 }
 
-function setup(cb) {
+function wipeGroup(group, cb) {
   containers
-    .stopRemoveGroup(group, function (err, res) {
+    .stopRemoveGroup('test', function (err, res) {
       if (err) return cb(err);
       images.removeGroup(group, cb);
     });
 }
 
-test('\nwhen I create an image named test:uno', function (t) {
+function setup(cb) {
+  wipeGroup('test', function (err) {
+    if (err) return cb(err);
+    wipeGroup('toast', cb);
+  });
+}
+
+test('\nwhen I create images named test:uno, test:dos and toast:uno from 3 different tars', function (t) {
+
+  function build(img, tar, cb) {
+    images.build(fs.createReadStream(tar), img, function (err) {
+      if (err) { t.fail(err); return t.end(); }
+      cb();
+    })
+  }
+
+  function findImage(img, name) {
+    for (var i  = 0; i < img.length; i++) {
+      if (img[i].RepoTags[0] === name) return img[i];
+    }
+  }
+
+  /*t.plan(6)
   setup(function (err) {
     if (err) { t.fail(err); return t.end(); }
-    console.error('building');
-    images.build(fs.createReadStream(testUnoTar), 'test:uno', function (err) {
+
+    build('test:uno', testUnoTar, function () {
+      t.pass('built test:uno')
+      build('test:dos', testDosTar, function () {
+        t.pass('built test:dos')
+        build('toast:uno', toastUnoTar, runTest)
+      })
+    })
+  })*/
+
+  runTest()
+  function runTest() {
+    t.plan(4)
+
+    images.list(function (err, res) {
       if (err) { t.fail(err); return t.end(); }
-      t.end();  
+      t.ok(res.length >= 3, 'images.list returns at least 3 images')
+      t.ok(findImage(res, 'test:uno'), 'list contains test:uno')
+      t.ok(findImage(res, 'test:dos'), 'list contains test:dos')
+      t.ok(findImage(res, 'toast:uno'), 'list contains toast:uno')
     });
-  });
-  
+  }
+
 })
 
 function createStreams() {
