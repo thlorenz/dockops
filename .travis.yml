@@ -10,5 +10,5 @@ before_install:
   - sudo chmod +x /usr/sbin/policy-rc.d
 install:
   - sudo apt-get install -qy slirp lxc lxc-docker
-  - docker -d &
-  - sleep 1
+  - sudo docker -H=tcp://127.0.0.1:4243 -d &
+  - npm install 
