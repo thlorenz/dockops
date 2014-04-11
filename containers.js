@@ -212,7 +212,8 @@ proto.listGroup = function (group, cb) {
     if (err) return cb(err);
 
     var matches = res.filter(function (x) { 
-      return images.deserializeImageName(x.Image).group === group 
+      var info = images.deserializeImageName(x.Image);
+      return info && info.group === group 
     });
 
     cb(null, matches);

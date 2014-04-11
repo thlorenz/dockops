@@ -11,4 +11,5 @@ before_install:
 install:
   - sudo apt-get install -qy slirp lxc lxc-docker
   - sudo docker -H=tcp://127.0.0.1:4243 -d &
+  - sleep 1
   - npm install 

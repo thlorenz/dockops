@@ -20,7 +20,7 @@ logEvents(containers, 'silly');
 
 function wipeGroup(group, cb) {
   containers
-    .stopRemoveGroup('test', function (err, res) {
+    .stopRemoveGroup(group, function (err, res) {
       if (err) return cb(err);
       images.removeGroup(group, cb);
     });
