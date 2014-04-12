@@ -4,7 +4,7 @@
   "description": "docker convenience functions on top of dockerode",
   "main": "index.js",
   "scripts": {
-    "test-main": "tap test/*.js",
+    "test-main": "tap --timeout 90 --stderr --tap test/*.js",
     "test-0.8": "nave use 0.8 npm run test-main",
     "test-0.10": "nave use 0.10 npm run test-main",
     "test-all": "npm run test-main && npm run test-0.8 && npm run test-0.10",

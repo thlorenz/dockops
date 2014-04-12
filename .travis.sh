@@ -14,4 +14,4 @@ sudo chmod +rw /var/run/docker.sock
 sudo docker ps -a
 sudo docker images
 
-(cd $DIR && sudo npm test)
+cd $DIR && npm test
