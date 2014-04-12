@@ -238,6 +238,28 @@ proto.listRunning = function (cb) {
 }
 
 /**
+ * Lists all containers that were created from a particular image.
+ * 
+ * @name listGroup
+ * @function
+ * @param {string} imageName name of image for which to list containers
+ * @param {function} cb 
+ */
+proto.listImage = function (imageName, cb) {
+  var self = this;
+
+  self.listAll(function (err, res) {
+    if (err) return cb(err);
+
+    var matches = res.filter(function (x) { 
+      return x.Image === imageName; 
+    });
+
+    cb(null, matches);
+  });
+}
+
+/**
  * Lists all running containers by the ports they expose.
  * 
  * @name dockops::Containers::activePorts
@@ -352,12 +374,12 @@ proto.removeStopped = function (cb) {
 
     var tasks = res
       .map(function (x) { 
-        return self.remove.bind(self,x.Id);
+        return self.remove.bind(self, x.Id);
       })
 
     runnel(tasks.concat(function (err) {
       if (err) return cb(err);
-      cb(res);   
+      cb(null, res);   
     }))
   })
 }

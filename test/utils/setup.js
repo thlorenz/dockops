@@ -46,6 +46,12 @@ exports.findImage = function findImage(img, name) {
   }
 }
 
+exports.findContainer = function (cont, imageName) {
+  for (var i  = 0; i < cont.length; i++) {
+    if (cont[i].Image === imageName) return cont[i];
+  }
+}
+
 exports.testToastImages = function setupTestToast(t) {
   setup(function (err) {
     if (err) { t.fail(err); return t.end(); }
