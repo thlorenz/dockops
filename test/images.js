@@ -6,7 +6,6 @@ var images     = setup.images
 var containers = setup.containers
 var findImage  = setup.findImage
 
-
 test('\nsetup: when I create images named test:uno, test:dos and toast:uno from 3 different tars', setup.testToastImages)
 
 test('\nand then list them', function (t) {

@@ -2,6 +2,9 @@ language: node_js
 node_js:
   - "0.10"
 
+env:
+  - DOCKER_HOST="unix:///var/run/docker.sock"
+
 before_install:
   - sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
   - sudo sh -c "echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
@@ -10,6 +13,9 @@ before_install:
   - sudo chmod +x /usr/sbin/policy-rc.d
 install:
   - sudo apt-get install -qy slirp lxc lxc-docker
-  - sudo docker -H=tcp://127.0.0.1:4243 -d &
-  - sleep 1
+  - sudo docker -d &
+  - sleep 10 
+  - sudo chmod o+rw /var/run/docker.sock 
+  - sudo docker ps -a
+  - sudo docker images
   - npm install 

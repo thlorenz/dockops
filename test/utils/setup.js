@@ -1,11 +1,11 @@
 'use strict';
 
 var fs           = require('fs')
-  , createDocker = require('./create-docker')
   , logEvents    = require('../../lib/log-events')
   , Images       = require('../../').Images
   , Containers   = require('../../').Containers
-  , dockerhost   = 'tcp://127.0.0.1:4243'
+  , createDocker = require('../../').createDocker
+  , dockerhost   = process.env.DOCKER_HOST
   , testUnoTar   = __dirname + '/../fixtures/test-uno.tar'
   , testDosTar   = __dirname + '/../fixtures/test-dos.tar'
   , toastUnoTar  = __dirname + '/../fixtures/toast-uno.tar'
@@ -28,7 +28,7 @@ function wipeGroup(group, cb) {
 
 function build(img, tar, cb) {
   images.build(fs.createReadStream(tar), img, function (err) {
-    if (err) { t.fail(err); return t.end(); }
+    if (err) return cb(err); 
     cb();
   })
 }
