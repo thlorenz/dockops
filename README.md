@@ -6,9 +6,9 @@ docker convenience functions on top of dockerode
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-	- [Installation](#installation)
-	- [API](#api)
-	- [License](#license)
+- [Installation](#installation)
+- [API](#api)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -69,7 +69,7 @@ build('test:uno', testUnoTar, function () {
 })
 ```
 
-![output](https://github.com/thlorenz/dockops/blob/master/assets/output.png)
+![output](https://github.com/thlorenz/dockops/raw/master/assets/output.png)
 
 ## Installation
 
