@@ -1,9 +1,5 @@
-# dockops [![build status](https://secure.travis-ci.org/thlorenz/dockops.png)](http://travis-ci.org/thlorenz/dockops)
-
-docker convenience functions on top of dockerode
-
-```js
-var dockops      = require('dockops')
+'use strict';
+var dockops      = require('../')
   , Images       = dockops.Images
   , Containers   = dockops.Containers
   , createDocker = dockops.createDocker
@@ -57,15 +53,3 @@ build('test:uno', testUnoTar, function () {
     })
   })
 })
-```
-
-## Installation
-
-    npm install dockops
-
-## API
-
-
-## License
-
-MIT
