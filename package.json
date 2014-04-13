@@ -1,6 +1,6 @@
 {
   "name": "dockops",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "docker convenience functions on top of dockerode",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,13 @@
     "nave": "~0.4.3",
     "tap": "~0.4.3"
   },
-  "keywords": [ "docker", "dockerode", "spinup", "provision", "devops" ],
+  "keywords": [
+    "docker",
+    "dockerode",
+    "spinup",
+    "provision",
+    "devops"
+  ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
