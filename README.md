@@ -14,13 +14,13 @@ docker convenience functions on top of dockerode
 
 ```js
 var dockops = require('dockops')
-var docker = createDocker({ dockerhost: dockerhost });
+var docker = dockops.createDocker({ dockerhost: dockerhost });
 
 var images = new dockops.Images(docker);
-dockops.logEvents(images, 'info');
+dockops.logEvents(images, 'verbose');
 
 var containers = new dockops.Containers(docker);
-dockops.logEvents(containers, 'info');
+dockops.logEvents(containers, 'verbose');
 
 build('test:uno', testUnoTar, function () {
   build('toast:uno', toastUnoTar, function () {
@@ -94,9 +94,13 @@ build('test:uno', testUnoTar, function () {
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line17">line 17</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L17">lineno 17</a>
+</li>
+</ul></dd>
 </dl>
 <h5>Returns:</h5>
 <div class="param-desc">
@@ -139,9 +143,13 @@ Type
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line262">line 262</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L262">lineno 262</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -182,9 +190,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line90">line 90</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L90">lineno 90</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -222,9 +234,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line35">line 35</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L35">lineno 35</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -262,9 +278,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line156">line 156</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L156">lineno 156</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -295,9 +315,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line172">line 172</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L172">lineno 172</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -335,9 +359,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line200">line 200</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L200">lineno 200</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -375,9 +403,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line240">line 240</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L240">lineno 240</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -408,9 +440,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line223">line 223</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L223">lineno 223</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -441,9 +477,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line183">line 183</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L183">lineno 183</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -481,9 +521,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line341">line 341</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L341">lineno 341</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -521,9 +565,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line387">line 387</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L387">lineno 387</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -554,9 +602,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line362">line 362</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L362">lineno 362</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -636,9 +688,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line54">line 54</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L54">lineno 54</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -676,9 +732,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line289">line 289</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L289">lineno 289</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -716,9 +776,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line309">line 309</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L309">lineno 309</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -756,9 +820,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="containers.js.html">containers.js</a>, <a href="containers.js.html#line417">line 417</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L417">lineno 417</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -793,9 +861,13 @@ This may not be needed anymore as docker got more stable.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="create-docker.js.html">lib/create-docker.js</a>, <a href="create-docker.js.html#line19">line 19</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/create-docker.js">lib/create-docker.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/create-docker.js#L19">lineno 19</a>
+</li>
+</ul></dd>
 </dl>
 <h5>Returns:</h5>
 <div class="param-desc">
@@ -838,9 +910,13 @@ Type
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="images.js.html">images.js</a>, <a href="images.js.html#line14">line 14</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js">images.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js#L14">lineno 14</a>
+</li>
+</ul></dd>
 </dl>
 <h5>Returns:</h5>
 <div class="param-desc">
@@ -899,9 +975,13 @@ All intermediate containers are removed after the image was created.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="images.js.html">images.js</a>, <a href="images.js.html#line65">line 65</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js">images.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js#L65">lineno 65</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -948,9 +1028,13 @@ All intermediate containers are removed after the image was created.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="images.js.html">images.js</a>, <a href="images.js.html#line32">line 32</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js">images.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js#L32">lineno 32</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -981,9 +1065,13 @@ All intermediate containers are removed after the image was created.</p>
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="images.js.html">images.js</a>, <a href="images.js.html#line104">line 104</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js">images.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js#L104">lineno 104</a>
+</li>
+</ul></dd>
 </dl>
 <h5>Returns:</h5>
 <div class="param-desc">
@@ -1026,9 +1114,13 @@ Type
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="images.js.html">images.js</a>, <a href="images.js.html#line120">line 120</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js">images.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js#L120">lineno 120</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -1066,9 +1158,13 @@ Type
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="images.js.html">images.js</a>, <a href="images.js.html#line131">line 131</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js">images.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js#L131">lineno 131</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -1106,9 +1202,13 @@ Type
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="images.js.html">images.js</a>, <a href="images.js.html#line159">line 159</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js">images.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js#L159">lineno 159</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -1147,9 +1247,13 @@ Type
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="log-events.js.html">lib/log-events.js</a>, <a href="log-events.js.html#line7">line 7</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/log-events.js">lib/log-events.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/log-events.js#L7">lineno 7</a>
+</li>
+</ul></dd>
 </dl>
 </dd>
 <dt>
@@ -1193,9 +1297,13 @@ Type
 </table>
 <dl class="details">
 <dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy"><li>
-<a href="port-bindings.js.html">lib/port-bindings.js</a>, <a href="port-bindings.js.html#line5">line 5</a>
-</li></ul></dd>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/port-bindings.js">lib/port-bindings.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/port-bindings.js#L5">lineno 5</a>
+</li>
+</ul></dd>
 </dl>
 <h5>Returns:</h5>
 <div class="param-desc">
