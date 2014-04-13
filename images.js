@@ -159,7 +159,7 @@ proto.listGroup = function (group, cb) {
 /**
  * Removes all images for the given group
  * 
- * @name removeGroup
+ * @name dockops::Images::removeGroup
  * @function
  * @param {string} group name of the group of images to remove
  * @param {function} cb called back when the images were removed

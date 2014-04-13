@@ -1,7 +1,7 @@
 'use strict';
 
 // containers don't seem to properly start up, so most of the list and stop tests fail
-// if (process.env.TRAVIS) return;
+if (process.env.TRAVIS) return;
 
 var test         = require('tap').test
 var setup        = require('./utils/setup')
