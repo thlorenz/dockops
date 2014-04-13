@@ -10,7 +10,7 @@ var fs           = require('fs')
   , testDosTar   = __dirname + '/../fixtures/test-dos.tar'
   , toastUnoTar  = __dirname + '/../fixtures/toast-uno.tar'
 
-var docker = createDocker({ dockerhost: dockerhost });
+var docker = createDocker(dockerhost);
 
 var images = new Images(docker);
 logEvents(images, 'silly');
