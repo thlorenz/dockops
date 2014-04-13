@@ -1,6 +1,6 @@
 {
   "name": "dockops",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "docker convenience functions on top of dockerode",
   "main": "index.js",
   "scripts": {
