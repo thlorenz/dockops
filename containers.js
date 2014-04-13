@@ -172,7 +172,7 @@ proto.list = function (all, cb) {
 /**
  * Lists all docker containers.
  * 
- * @name dockops::Containers::list
+ * @name dockops::Containers::listAll
  * @function
  * @param {function} cb called back with list of containers
  */

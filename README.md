@@ -280,7 +280,7 @@ This may not be needed anymore as docker got more stable.</p>
 </dl>
 </dd>
 <dt>
-<h4 class="name" id="dockops::Containers::list"><span class="type-signature"></span>dockops::Containers::list<span class="signature">(cb)</span><span class="type-signature"></span></h4>
+<h4 class="name" id="dockops::Containers::listAll"><span class="type-signature"></span>dockops::Containers::listAll<span class="signature">(cb)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
 <div class="description">
