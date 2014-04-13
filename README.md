@@ -17,7 +17,10 @@ var dockops = require('dockops')
 var docker = createDocker({ dockerhost: dockerhost });
 
 var images = new dockops.Images(docker);
+dockops.logEvents(images, 'info');
+
 var containers = new dockops.Containers(docker);
+dockops.logEvents(containers, 'info');
 
 build('test:uno', testUnoTar, function () {
   build('toast:uno', toastUnoTar, function () {
@@ -29,6 +32,11 @@ build('test:uno', testUnoTar, function () {
       containers.stopRemoveGroup('test', function (err, res) {
         containers.listRunning(function (err, res) {
           inspect(res);
+          http.request({ port: 49222 }, function (res) {
+            console.log('--------------------------')
+            inspect({ status: res.statusCode, headers: res.headers })
+            res.pipe(process.stdout)
+          }).end()
         }) 
       })
     })

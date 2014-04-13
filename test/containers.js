@@ -1,14 +1,15 @@
 'use strict';
 
 // containers don't seem to properly start up, so most of the list and stop tests fail
-if (process.env.TRAVIS) return;
+// if (process.env.TRAVIS) return;
 
-var test       = require('tap').test
-var setup      = require('./utils/setup')
+var test         = require('tap').test
+var setup        = require('./utils/setup')
+var http         = require('http')
 var portBindings = require('../').portBindings;
-var images     = setup.images
-var containers = setup.containers
-var findImage  = setup.findImage
+var images       = setup.images
+var containers   = setup.containers
+var findImage    = setup.findImage
 
 test('\nsetup: when I create images named test:uno, test:dos and toast:uno from 3 different tars', setup.testToastImages)
 
@@ -31,11 +32,9 @@ test('\nsetup: and then I run test:uno', function (t) {
   var hostPort = 49222;
   var imageName = 'test:uno';
   var pb = portBindings(exposePort, hostPort)
-  var exposedPorts = {};
-  exposedPorts[exposePort + '/tcp'] = {};
 
   containers.run({  
-      create : { Image : imageName, ExposedPorts: exposedPorts, Cmd: ['node', '/src/index.js'] }
+      create : { Image : imageName, ExposedPorts: pb, Cmd: ['node', '/src/index.js'] }
     , start  : { PortBindings: pb }
     }
   , function (err, container) {
@@ -50,11 +49,9 @@ test('\nsetup: and then I run test:dos', function (t) {
   var hostPort = 49223;
   var imageName = 'test:dos';
   var pb = portBindings(exposePort, hostPort)
-  var exposedPorts = {};
-  exposedPorts[exposePort + '/tcp'] = {};
 
   containers.run({  
-      create : { Image : imageName, ExposedPorts: exposedPorts, Cmd: ['node', '/src/index.js'] }
+      create : { Image : imageName, ExposedPorts: pb, Cmd: ['node', '/src/index.js'] }
     , start  : { PortBindings: pb }
     }
   , function (err, container) {
@@ -69,11 +66,9 @@ test('\nsetup: and then I run toast:uno', function (t) {
   var hostPort = 49224;
   var imageName = 'toast:uno';
   var pb = portBindings(exposePort, hostPort)
-  var exposedPorts = {};
-  exposedPorts[exposePort + '/tcp'] = {};
 
   containers.run({  
-      create : { Image : imageName, ExposedPorts: exposedPorts, Cmd: ['node', '/src/index.js'] }
+      create : { Image : imageName, ExposedPorts: pb, Cmd: ['node', '/src/index.js'] }
     , start  : { PortBindings: pb }
     }
   , function (err, container) {
@@ -81,6 +76,19 @@ test('\nsetup: and then I run toast:uno', function (t) {
       t.ok(container, 'runs toast:uno')
       t.end()
     })
+})
+
+test('\ninteract with containers via host port', function (t) {
+  t.plan(3)
+  http.request({ port: 49222 }, function (res) {
+    t.equal(res.statusCode, 200, 'test:uno responds with status 200')  
+  }).end()
+  http.request({ port: 49223 }, function (res) {
+    t.equal(res.statusCode, 200, 'test:dos responds with status 200')  
+  }).end()
+  http.request({ port: 49224 }, function (res) {
+    t.equal(res.statusCode, 200, 'toast:uno responds with status 200')  
+  }).end()
 })
 
 test('\nlist', function (t) {
