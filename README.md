@@ -267,43 +267,6 @@ This may not be needed anymore as docker got more stable.</p>
 </dl>
 </dd>
 <dt>
-<h4 class="name" id="dockops::Containers::list"><span class="type-signature"></span>dockops::Containers::list<span class="signature">(cb)</span><span class="type-signature"></span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Lists all docker containers.</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>cb</code></td>
-<td class="type">
-<span class="param-type">function</span>
-</td>
-<td class="description last"><p>called back with list of containers</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
-<span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L172">lineno 172</a>
-</li>
-</ul></dd>
-</dl>
-</dd>
-<dt>
 <h4 class="name" id="dockops::Containers::list"><span class="type-signature"></span>dockops::Containers::list<span class="signature">(all, cb)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
@@ -343,6 +306,131 @@ This may not be needed anymore as docker got more stable.</p>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L156">lineno 156</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::list"><span class="type-signature"></span>dockops::Containers::list<span class="signature">(cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Lists all docker containers.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>called back with list of containers</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L172">lineno 172</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::listGroup"><span class="type-signature"></span>dockops::Containers::listGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Lists all containers that were created from images belonging to a given group.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>group</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>group for which to list containers</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L200">lineno 200</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::listImage"><span class="type-signature"></span>dockops::Containers::listImage<span class="signature">(imageName, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Lists all containers that were created from a particular image.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>imageName</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>name of image for which to list containers</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L240">lineno 240</a>
 </li>
 </ul></dd>
 </dl>
@@ -417,6 +505,94 @@ This may not be needed anymore as docker got more stable.</p>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L183">lineno 183</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::remove"><span class="type-signature"></span>dockops::Containers::remove<span class="signature">(id, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Removes the container with the given id</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>id</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>id of the container to remove</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>called back when container was removed</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L341">lineno 341</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::removeGroup"><span class="type-signature"></span>dockops::Containers::removeGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Removes all containers that were created from images belonging to a given group.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>group</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>group for which to remove containers</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L387">lineno 387</a>
 </li>
 </ul></dd>
 </dl>
@@ -542,6 +718,191 @@ This may not be needed anymore as docker got more stable.</p>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L54">lineno 54</a>
 </li>
 </ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::stop"><span class="type-signature"></span>dockops::Containers::stop<span class="signature">(id, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Stops the container with the given id</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>id</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>id of the container to stop</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>called back when container was stopd</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L289">lineno 289</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::stopGroup"><span class="type-signature"></span>dockops::Containers::stopGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Stops all containers that were created from images belonging to a given group.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>group</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>group for which to stop containers</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L309">lineno 309</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::stopRemoveGroup"><span class="type-signature"></span>dockops::Containers::stopRemoveGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Stops and then removes all containers created from images belonging to a given group.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>group</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>group for which to remove containers</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L417">lineno 417</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::createDocker"><span class="type-signature"></span>dockops::createDocker<span class="signature">(<span class="optional">dockerhost</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Convenience function to create a <a href="https://github.com/apocas/dockerode">dockerode</a> instance.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Argument</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>dockerhost</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last"><p>(default: <code>'unix:///var/run/docker.sock'</code>) the docker host can also be <code>http</code> or <code>tcp</code></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/create-docker.js">lib/create-docker.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/create-docker.js#L19">lineno 19</a>
+</li>
+</ul></dd>
+</dl>
+<h5>Returns:</h5>
+<div class="param-desc">
+<p>dockerode instance</p>
+</div>
+<dl>
+<dt>
+Type
+</dt>
+<dd>
+<span class="param-type">Object</span>
+</dd>
 </dl>
 </dd>
 <dt>
@@ -830,227 +1191,7 @@ Type
 </dl>
 </dd>
 <dt>
-<h4 class="name" id="listGroup"><span class="type-signature"></span>listGroup<span class="signature">(imageName, cb)</span><span class="type-signature"></span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Lists all containers that were created from a particular image.</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>imageName</code></td>
-<td class="type">
-<span class="param-type">string</span>
-</td>
-<td class="description last"><p>name of image for which to list containers</p></td>
-</tr>
-<tr>
-<td class="name"><code>cb</code></td>
-<td class="type">
-<span class="param-type">function</span>
-</td>
-<td class="description last"></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
-<span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L240">lineno 240</a>
-</li>
-</ul></dd>
-</dl>
-</dd>
-<dt>
-<h4 class="name" id="listGroup"><span class="type-signature"></span>listGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Lists all containers that were created from images belonging to a given group.</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>group</code></td>
-<td class="type">
-<span class="param-type">string</span>
-</td>
-<td class="description last"><p>group for which to list containers</p></td>
-</tr>
-<tr>
-<td class="name"><code>cb</code></td>
-<td class="type">
-<span class="param-type">function</span>
-</td>
-<td class="description last"></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
-<span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L200">lineno 200</a>
-</li>
-</ul></dd>
-</dl>
-</dd>
-<dt>
-<h4 class="name" id="remove"><span class="type-signature"></span>remove<span class="signature">(id, cb)</span><span class="type-signature"></span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Removes the container with the given id</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>id</code></td>
-<td class="type">
-<span class="param-type">string</span>
-</td>
-<td class="description last"><p>id of the container to remove</p></td>
-</tr>
-<tr>
-<td class="name"><code>cb</code></td>
-<td class="type">
-<span class="param-type">function</span>
-</td>
-<td class="description last"><p>called back when container was removed</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
-<span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L341">lineno 341</a>
-</li>
-</ul></dd>
-</dl>
-</dd>
-<dt>
-<h4 class="name" id="removeGroup"><span class="type-signature"></span>removeGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Removes all containers that were created from images belonging to a given group.</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>group</code></td>
-<td class="type">
-<span class="param-type">string</span>
-</td>
-<td class="description last"><p>group for which to remove containers</p></td>
-</tr>
-<tr>
-<td class="name"><code>cb</code></td>
-<td class="type">
-<span class="param-type">function</span>
-</td>
-<td class="description last"></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
-<span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L387">lineno 387</a>
-</li>
-</ul></dd>
-</dl>
-</dd>
-<dt>
-<h4 class="name" id="removeGroup"><span class="type-signature"></span>removeGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Removes all images for the given group</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>group</code></td>
-<td class="type">
-<span class="param-type">string</span>
-</td>
-<td class="description last"><p>name of the group of images to remove</p></td>
-</tr>
-<tr>
-<td class="name"><code>cb</code></td>
-<td class="type">
-<span class="param-type">function</span>
-</td>
-<td class="description last"><p>called back when the images were removed</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/thlorenz/dockops/blob/master/images.js">images.js</a>
-<span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/images.js#L159">lineno 159</a>
-</li>
-</ul></dd>
-</dl>
-</dd>
-<dt>
-<h4 class="name" id="spinupTarstreams::logEvents"><span class="type-signature"></span>spinupTarstreams::logEvents<span class="signature">(events, level)</span><span class="type-signature"></span></h4>
+<h4 class="name" id="dockops::logEvents"><span class="type-signature"></span>dockops::logEvents<span class="signature">(events, level)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
 <div class="description">
@@ -1095,11 +1236,11 @@ Type
 </dl>
 </dd>
 <dt>
-<h4 class="name" id="stop"><span class="type-signature"></span>stop<span class="signature">(id, cb)</span><span class="type-signature"></span></h4>
+<h4 class="name" id="dockops::portBindings"><span class="type-signature"></span>dockops::portBindings<span class="signature">(exposePort, hostPort)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 </dt>
 <dd>
 <div class="description">
-<p>Stops the container with the given id</p>
+<p>Helper function to creat a proper tcp portbinding for the given ports</p>
 </div>
 <h5>Parameters:</h5>
 <table class="params">
@@ -1112,18 +1253,18 @@ Type
 </thead>
 <tbody>
 <tr>
-<td class="name"><code>id</code></td>
+<td class="name"><code>exposePort</code></td>
 <td class="type">
-<span class="param-type">string</span>
+<span class="param-type">number</span>
 </td>
-<td class="description last"><p>id of the container to stop</p></td>
+<td class="description last"><p>the port of the docker container to expose to the host</p></td>
 </tr>
 <tr>
-<td class="name"><code>cb</code></td>
+<td class="name"><code>hostPort</code></td>
 <td class="type">
-<span class="param-type">function</span>
+<span class="param-type">number</span>
 </td>
-<td class="description last"><p>called back when container was stopd</p></td>
+<td class="description last"><p>the host port to which to bind the exposed port</p></td>
 </tr>
 </tbody>
 </table>
@@ -1131,19 +1272,31 @@ Type
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/port-bindings.js">lib/port-bindings.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L289">lineno 289</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/lib/port-bindings.js#L5">lineno 5</a>
 </li>
 </ul></dd>
 </dl>
+<h5>Returns:</h5>
+<div class="param-desc">
+<p>the port binding to pass to docker when creating a container</p>
+</div>
+<dl>
+<dt>
+Type
+</dt>
+<dd>
+<span class="param-type">Object</span>
+</dd>
+</dl>
 </dd>
 <dt>
-<h4 class="name" id="stopGroup"><span class="type-signature"></span>stopGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
+<h4 class="name" id="removeGroup"><span class="type-signature"></span>removeGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
 </dt>
 <dd>
 <div class="description">
-<p>Stops all containers that were created from images belonging to a given group.</p>
+<p>Removes all images for the given group</p>
 </div>
 <h5>Parameters:</h5>
 <table class="params">
@@ -1160,14 +1313,14 @@ Type
 <td class="type">
 <span class="param-type">string</span>
 </td>
-<td class="description last"><p>group for which to stop containers</p></td>
+<td class="description last"><p>name of the group of images to remove</p></td>
 </tr>
 <tr>
 <td class="name"><code>cb</code></td>
 <td class="type">
 <span class="param-type">function</span>
 </td>
-<td class="description last"></td>
+<td class="description last"><p>called back when the images were removed</p></td>
 </tr>
 </tbody>
 </table>
@@ -1175,53 +1328,9 @@ Type
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js">images.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L309">lineno 309</a>
-</li>
-</ul></dd>
-</dl>
-</dd>
-<dt>
-<h4 class="name" id="stopRemoveGroup"><span class="type-signature"></span>stopRemoveGroup<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Stops and then removes all containers created from images belonging to a given group.</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>group</code></td>
-<td class="type">
-<span class="param-type">string</span>
-</td>
-<td class="description last"><p>group for which to remove containers</p></td>
-</tr>
-<tr>
-<td class="name"><code>cb</code></td>
-<td class="type">
-<span class="param-type">function</span>
-</td>
-<td class="description last"></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
-<span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L417">lineno 417</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/images.js#L159">lineno 159</a>
 </li>
 </ul></dd>
 </dl>

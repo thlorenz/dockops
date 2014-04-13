@@ -200,7 +200,7 @@ proto.listStopped = function (cb) {
 /**
  * Lists all containers that were created from images belonging to a given group.
  * 
- * @name listGroup
+ * @name dockops::Containers::listGroup
  * @function
  * @param {string} group group for which to list containers
  * @param {function} cb 
@@ -240,7 +240,7 @@ proto.listRunning = function (cb) {
 /**
  * Lists all containers that were created from a particular image.
  * 
- * @name listGroup
+ * @name dockops::Containers::listImage
  * @function
  * @param {string} imageName name of image for which to list containers
  * @param {function} cb 
@@ -289,7 +289,7 @@ function inspect(obj, depth) {
 /**
  * Stops the container with the given id
  * 
- * @name stop
+ * @name dockops::Containers::stop
  * @function
  * @param {string} id id of the container to stop
  * @param {function} cb called back when container was stopd
@@ -309,7 +309,7 @@ proto.stop = function (id, cb) {
 /**
  * Stops all containers that were created from images belonging to a given group.
  * 
- * @name stopGroup
+ * @name dockops::Containers::stopGroup
  * @function
  * @param {string} group group for which to stop containers
  * @param {function} cb 
@@ -341,7 +341,7 @@ proto.stopGroup = function (group, cb) {
 /**
  * Removes the container with the given id
  * 
- * @name remove
+ * @name dockops::Containers::remove
  * @function
  * @param {string} id id of the container to remove
  * @param {function} cb called back when container was removed
@@ -387,7 +387,7 @@ proto.removeStopped = function (cb) {
 /**
  * Removes all containers that were created from images belonging to a given group.
  * 
- * @name removeGroup
+ * @name dockops::Containers::removeGroup
  * @function
  * @param {string} group group for which to remove containers
  * @param {function} cb 
@@ -417,7 +417,7 @@ proto.removeGroup = function (group, cb) {
 /**
  * Stops and then removes all containers created from images belonging to a given group.
  * 
- * @name stopRemoveGroup
+ * @name dockops::Containers::stopRemoveGroup
  * @function
  * @param {string} group group for which to remove containers
  * @param {function} cb 
@@ -438,7 +438,7 @@ proto.stopRemoveGroup = function (group, cb) {
  * Starts a given container that has been created before.
  * Note: NOT USED
  * 
- * @name start
+ * @name dockops::Containers::start
  * @function
  * @private
  * @param {string} id the container id
