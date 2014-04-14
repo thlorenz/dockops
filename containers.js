@@ -352,6 +352,27 @@ proto.stopGroup = function (group, cb) {
 }
 
 /**
+ * Stops all containers that were created from the image with the given name
+ * 
+ * @name dockops::Containers::stopImage
+ * @function
+ * @param {string} name name of the image for which to stop containers
+ * @param {function} cb called back when containers were stopped
+ */
+proto.stopImage = function (name, cb) {
+  var self = this;
+  self.listImage(name, function (err, conts) {
+    if (err) return cb(err);
+    if (!conts || !conts.length) return cb();
+
+    var tasks = conts.map(function (x) {
+      return self.stop.bind(self, x.Id);
+    })
+    runnel(tasks.concat(cb));
+  })
+}
+
+/**
  * Removes the container with the given id
  * 
  * @name dockops::Containers::remove
@@ -372,6 +393,26 @@ proto.remove = function (id, cb) {
   })
 }
 
+/**
+ * Removes all containers that were created from the image with the given name
+ * 
+ * @name dockops::Containers::removeImage
+ * @function
+ * @param {string} name name of the image for which to remove containers
+ * @param {function} cb called back when containers were removed
+ */
+proto.removeImage = function (name, cb) {
+  var self = this;
+  self.listImage(name, function (err, conts) {
+    if (err) return cb(err);
+    if (!conts || !conts.length) return cb();
+
+    var tasks = conts.map(function (x) {
+      return self.remove.bind(self, x.Id);
+    })
+    runnel(tasks.concat(cb));
+  })
+}
 /**
  * Removes all stopped containers.
  * 
@@ -425,6 +466,53 @@ proto.removeGroup = function (group, cb) {
 
     runnel(tasks.concat(cb));
   });
+}
+
+
+/**
+ * Stops and then removes the container with the given id
+ * 
+ * @name dockops::Containers::stopRemove
+ * @function
+ * @param {string} id id of the container to stop and remove 
+ * @param {function} cb called back when container was stopped and removed 
+ */
+proto.stopRemove = function (id, cb) {
+  var self = this;
+
+  var container = self.docker.getContainer(id);
+  self.emit('verbose', 'containers', 'removing', id);
+
+  container.stop(function (err) {
+    if (err) return cb(err);
+
+    container.remove(function (err, data) {
+      if (err) return cb(err);
+      self.emit('info', 'containers', 'removed', id);
+      cb();
+    })
+  })
+}
+
+/**
+ * Stops and then removes all containers that were created from the image with the given name
+ * 
+ * @name dockops::Containers::stopRemoveImage
+ * @function
+ * @param {string} name name of the image for which to stop and remove containers
+ * @param {function} cb called back when containers were stopped and removed
+ */
+proto.stopRemoveImage = function (name, cb) {
+  var self = this;
+  self.listImage(name, function (err, conts) {
+    if (err) return cb(err);
+    if (!conts || !conts.length) return cb();
+
+    var tasks = conts.map(function (x) {
+      return self.stopRemove.bind(self, x.Id);
+    })
+    runnel(tasks.concat(cb));
+  })
 }
 
 /**

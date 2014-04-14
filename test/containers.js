@@ -27,56 +27,25 @@ function inspect(obj, depth) {
   console.error(require('util').inspect(obj, false, depth || 5, true));
 }
 
-test('\nsetup: and then I run test:uno', function (t) {
-  var exposePort = 1337;
-  var hostPort = 49222;
-  var imageName = 'test:uno';
-  var pb = portBindings(exposePort, hostPort)
+function runContainer(name, expose, host) {
+  test('\nsetup: and then I run test:uno', function (t) {
+    var pb = portBindings(expose, host)
 
-  containers.run({  
-      create : { Image : imageName, ExposedPorts: pb, Cmd: ['node', '/src/index.js'] }
-    , start  : { PortBindings: pb }
-    }
-  , function (err, container) {
-      if (err) { t.fail(err); return t.end(); }
-      t.ok(container, 'runs test:uno')
-      t.end()
-    })
-})
+    containers.run({  
+        create : { Image : name, ExposedPorts: pb, Cmd: ['node', '/src/index.js'] }
+      , start  : { PortBindings: pb }
+      }
+    , function (err, container) {
+        if (err) { t.fail(err); return t.end(); }
+        t.ok(container, 'runs ' + name)
+        t.end()
+      })
+  })
+}
 
-test('\nsetup: and then I run test:dos', function (t) {
-  var exposePort = 1338;
-  var hostPort = 49223;
-  var imageName = 'test:dos';
-  var pb = portBindings(exposePort, hostPort)
-
-  containers.run({  
-      create : { Image : imageName, ExposedPorts: pb, Cmd: ['node', '/src/index.js'] }
-    , start  : { PortBindings: pb }
-    }
-  , function (err, container) {
-      if (err) { t.fail(err); return t.end(); }
-      t.ok(container, 'runs test:dos')
-      t.end()
-    })
-})
-
-test('\nsetup: and then I run toast:uno', function (t) {
-  var exposePort = 1339;
-  var hostPort = 49224;
-  var imageName = 'toast:uno';
-  var pb = portBindings(exposePort, hostPort)
-
-  containers.run({  
-      create : { Image : imageName, ExposedPorts: pb, Cmd: ['node', '/src/index.js'] }
-    , start  : { PortBindings: pb }
-    }
-  , function (err, container) {
-      if (err) { t.fail(err); return t.end(); }
-      t.ok(container, 'runs toast:uno')
-      t.end()
-    })
-})
+runContainer('test:uno', 1337, 49222);
+runContainer('test:dos', 1338, 49223);
+runContainer('toast:uno', 1339, 49224);
 
 test('\ninteract with containers via host port', function (t) {
   t.plan(3)
@@ -237,4 +206,35 @@ test('\nremove stopped', function (t) {
       t.ok(!setup.findContainer(res, 'toast:uno'), 'listStopped does not include toast:uno container')
     })
   })
+})
+
+runContainer('test:uno', 1337, 49222);
+runContainer('test:dos', 1338, 49223);
+runContainer('toast:uno', 1339, 49224);
+
+test('\nwhen I stop remove group test', function (t) {
+  containers.stopRemoveGroup('test', function (err) {
+    if (err) { t.fail(err); return t.end(); }
+    containers.listAll(function (err, res) {
+      if (err) { t.fail(err); return t.end(); }
+      
+      t.ok(res.length >= 1, 'lists at least one container')
+      t.ok(!setup.findContainer(res, 'test:uno'), 'listAll does not include test:uno container')
+      t.ok(!setup.findContainer(res, 'test:dos'), 'listAll does not include test:dos container')
+      t.ok(setup.findContainer(res, 'toast:uno'), 'one of them is toast:uno')
+
+      containers.stopRemoveImage('toast:uno', function (err) {
+        if (err) { t.fail(err); return t.end(); }
+        t.pass('and after I remove toast:uno via image name')
+        containers.listAll(function (err, res) {
+          if (err) { t.fail(err); return t.end(); }
+          
+          t.ok(!setup.findContainer(res, 'test:uno'), 'listAll does not include test:uno container')
+          t.ok(!setup.findContainer(res, 'test:dos'), 'listAll does not include test:dos container')
+          t.ok(!setup.findContainer(res, 'toast:uno'), 'listAll does not include toast:uno container')
+          t.end()
+        })
+      })
+    })  
+  })  
 })

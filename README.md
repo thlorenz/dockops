@@ -98,7 +98,7 @@ build('test:uno', testUnoTar, function () {
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L17">lineno 17</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L24">lineno 24</a>
 </li>
 </ul></dd>
 </dl>
@@ -147,7 +147,7 @@ Type
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L262">lineno 262</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L275">lineno 275</a>
 </li>
 </ul></dd>
 </dl>
@@ -194,7 +194,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L90">lineno 90</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L97">lineno 97</a>
 </li>
 </ul></dd>
 </dl>
@@ -238,51 +238,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L35">lineno 35</a>
-</li>
-</ul></dd>
-</dl>
-</dd>
-<dt>
-<h4 class="name" id="dockops::Containers::list"><span class="type-signature"></span>dockops::Containers::list<span class="signature">(all, cb)</span><span class="type-signature"></span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Lists docker containers.</p>
-</div>
-<h5>Parameters:</h5>
-<table class="params">
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th class="last">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="name"><code>all</code></td>
-<td class="type">
-<span class="param-type">boolean</span>
-</td>
-<td class="description last"><p>if true, all containers are listed</p></td>
-</tr>
-<tr>
-<td class="name"><code>cb</code></td>
-<td class="type">
-<span class="param-type">function</span>
-</td>
-<td class="description last"><p>called back with list of containers</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
-<span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L156">lineno 156</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L42">lineno 42</a>
 </li>
 </ul></dd>
 </dl>
@@ -319,7 +275,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L172">lineno 172</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L180">lineno 180</a>
 </li>
 </ul></dd>
 </dl>
@@ -363,7 +319,51 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L200">lineno 200</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L208">lineno 208</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::listGroupRunning"><span class="type-signature"></span>dockops::Containers::listGroupRunning<span class="signature">(group, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Lists all running docker containers of the given group</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>group</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>group for which to list running containers</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>called back with list of running containers</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L236">lineno 236</a>
 </li>
 </ul></dd>
 </dl>
@@ -407,7 +407,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L240">lineno 240</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L253">lineno 253</a>
 </li>
 </ul></dd>
 </dl>
@@ -444,7 +444,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L223">lineno 223</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L225">lineno 225</a>
 </li>
 </ul></dd>
 </dl>
@@ -481,7 +481,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L183">lineno 183</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L191">lineno 191</a>
 </li>
 </ul></dd>
 </dl>
@@ -525,7 +525,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L341">lineno 341</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L375">lineno 375</a>
 </li>
 </ul></dd>
 </dl>
@@ -569,7 +569,51 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L387">lineno 387</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L441">lineno 441</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::removeImage"><span class="type-signature"></span>dockops::Containers::removeImage<span class="signature">(name, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Removes all containers that were created from the image with the given name</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>name of the image for which to remove containers</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>called back when containers were removed</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L396">lineno 396</a>
 </li>
 </ul></dd>
 </dl>
@@ -606,7 +650,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L362">lineno 362</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L416">lineno 416</a>
 </li>
 </ul></dd>
 </dl>
@@ -692,7 +736,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L54">lineno 54</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L61">lineno 61</a>
 </li>
 </ul></dd>
 </dl>
@@ -736,7 +780,7 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L289">lineno 289</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L302">lineno 302</a>
 </li>
 </ul></dd>
 </dl>
@@ -780,7 +824,95 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L309">lineno 309</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L322">lineno 322</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::stopImage"><span class="type-signature"></span>dockops::Containers::stopImage<span class="signature">(name, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Stops all containers that were created from the image with the given name</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>name of the image for which to stop containers</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>called back when containers were stopped</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L354">lineno 354</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::stopRemove"><span class="type-signature"></span>dockops::Containers::stopRemove<span class="signature">(id, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Stops and then removes the container with the given id</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>id</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>id of the container to stop and remove</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>called back when container was stopped and removed</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L472">lineno 472</a>
 </li>
 </ul></dd>
 </dl>
@@ -824,7 +956,51 @@ This may not be needed anymore as docker got more stable.</p>
 <li>
 <a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L417">lineno 417</a>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L518">lineno 518</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+<dt>
+<h4 class="name" id="dockops::Containers::stopRemoveImage"><span class="type-signature"></span>dockops::Containers::stopRemoveImage<span class="signature">(name, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Stops and then removes all containers that were created from the image with the given name</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>name of the image for which to stop and remove containers</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>called back when containers were stopped and removed</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js">containers.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/dockops/blob/master/containers.js#L497">lineno 497</a>
 </li>
 </ul></dd>
 </dl>
