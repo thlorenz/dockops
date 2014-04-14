@@ -329,6 +329,8 @@ proto.stop = function (id, cb) {
  */
 proto.stopGroup = function (group, cb) {
   var self = this;
+  self.emit('info', 'containers', 'stopping containers of group', group);
+
   self.listGroup(group, function (err, res) {
     if (err) return cb(err);
     var tasks = res
@@ -361,6 +363,7 @@ proto.stopGroup = function (group, cb) {
  */
 proto.stopImage = function (name, cb) {
   var self = this;
+  self.emit('info', 'containers', 'stopping containers of image', name);
   self.listImage(name, function (err, conts) {
     if (err) return cb(err);
     if (!conts || !conts.length) return cb();
@@ -403,6 +406,8 @@ proto.remove = function (id, cb) {
  */
 proto.removeImage = function (name, cb) {
   var self = this;
+  self.emit('info', 'containers', 'removing containers of image', name);
+
   self.listImage(name, function (err, conts) {
     if (err) return cb(err);
     if (!conts || !conts.length) return cb();
@@ -423,6 +428,7 @@ proto.removeImage = function (name, cb) {
 proto.removeStopped = function (cb) {
   var self = this;
 
+  self.emit('info', 'containers', 'removing all stopped containers');
   this.listStopped(function (err, res) {
     if (err) return cb(err);
 
@@ -448,6 +454,8 @@ proto.removeStopped = function (cb) {
  */
 proto.removeGroup = function (group, cb) {
   var self = this;
+
+  self.emit('info', 'containers', 'removing containers of group', group);
   self.listGroup(group, function (err, res) {
     if (err) return cb(err);
 
@@ -504,6 +512,8 @@ proto.stopRemove = function (id, cb) {
  */
 proto.stopRemoveImage = function (name, cb) {
   var self = this;
+
+  self.emit('info', 'containers', 'stopping and removing containers of image', name);
   self.listImage(name, function (err, conts) {
     if (err) return cb(err);
     if (!conts || !conts.length) return cb();
