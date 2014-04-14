@@ -14,6 +14,13 @@ module.exports = Containers;
 
 util.inherits(Containers, EE);
 
+function matchGroup(group, cont) {
+  return cont.filter(function (x) { 
+    var info = images.deserializeImageName(x.Image);
+    return info && info.group === group 
+  });
+}
+
 /**
  * Creates a new containers instance that will use the given docker instance to communicate with docker.
  * 
@@ -157,11 +164,12 @@ proto.clean = function (id, cb) {
  * Lists docker containers.
  * 
  * @name dockops::Containers::list
+ * @private
  * @function
  * @param {boolean} all if true, all containers are listed
  * @param {function} cb called back with list of containers
  */
-proto.list = function (all, cb) {
+proto._list = function (all, cb) {
   if (typeof all === 'function') {
     cb = all;
     all = false;
@@ -177,7 +185,7 @@ proto.list = function (all, cb) {
  * @param {function} cb called back with list of containers
  */
 proto.listAll = function (cb) { 
-  this.list(true, cb);
+  this._list(true, cb);
 }
 
 /**
@@ -206,16 +214,10 @@ proto.listStopped = function (cb) {
  * @param {function} cb 
  */
 proto.listGroup = function (group, cb) {
-  var self = this;
-
-  self.listAll(function (err, res) {
+  this.listAll(function (err, res) {
     if (err) return cb(err);
 
-    var matches = res.filter(function (x) { 
-      var info = images.deserializeImageName(x.Image);
-      return info && info.group === group 
-    });
-
+    var matches = matchGroup(group, res);
     cb(null, matches);
   });
 }
@@ -228,12 +230,23 @@ proto.listGroup = function (group, cb) {
  * @param {function} cb called back with list of running containers
  */
 proto.listRunning = function (cb) {
-  this.listAll(function (err, res) {
+  this._list(false, cb);
+}
+
+/**
+ * Lists all running docker containers of the given group
+ * 
+ * @name dockops::Containers::listGroupRunning
+ * @function
+ * @param {string} group group for which to list running containers
+ * @param {function} cb called back with list of running containers
+ */
+proto.listGroupRunning = function (group, cb) {
+  this._list(false, function (err, res) {
     if (err) return cb(err);
-    var alive = res.filter(function(x) { 
-      return !(/^Exit/).test(x.Status) 
-    })
-    cb(null, alive);
+      
+    var matches = matchGroup(group, res);
+    cb(null, matches);
   });
 }
 
@@ -430,13 +443,8 @@ proto.stopRemoveGroup = function (group, cb) {
   });
 }
 
-//
-// NOT USED
-//
-
 /**
  * Starts a given container that has been created before.
- * Note: NOT USED
  * 
  * @name dockops::Containers::start
  * @function
