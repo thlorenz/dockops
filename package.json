@@ -19,12 +19,11 @@
     "dockerode": "~1.2.10",
     "npmlog": "0.0.6",
     "runnel": "~0.5.2",
-    "tap": "~0.4.8",
     "xtend": "~2.2.0"
   },
   "devDependencies": {
     "nave": "~0.4.3",
-    "tap": "~0.4.3"
+    "tap": "~0.4.8"
   },
   "keywords": [
     "docker",
